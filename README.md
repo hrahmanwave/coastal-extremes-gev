@@ -34,11 +34,22 @@ amax = annual_maxima(s, min_completeness=0.8)
 
 Downloads are cached in `data/` (not tracked by git).
 
+## Plot annual maxima
+
+```bash
+python scripts/plot_annual_maxima.py
+python scripts/plot_annual_maxima.py --station 8761724 --name "Grand Isle, LA" --start 1990 --end 2024
+```
+
+Saves `figures/<station>_annual_maxima.png`: annual maximum water level with a linear trend,
+and yearly data completeness (years with less than 80% data are excluded).
+
 ## Roadmap
 
 - [x] UHSLC research-quality hourly download
 - [x] NOAA CO-OPS hourly download (year-by-year, cached)
 - [x] Quality control: regular hourly grid, yearly completeness, annual maxima
+- [x] Workflow diagram and annual maxima plotting script
 - [ ] Remove linear mean sea level trend, compute non-tidal residual
 - [ ] GEV fit to annual maxima with bootstrap confidence intervals
 - [ ] Peaks over threshold + GPD, threshold selection
