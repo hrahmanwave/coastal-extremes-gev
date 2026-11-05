@@ -1,5 +1,9 @@
 # coastal-extremes-gev
 
+<p align="center">
+  <img src="figures/workflow.svg" alt="Workflow" width="900">
+</p>
+
 Extreme value analysis of coastal water levels from tide gauge records.
 Download hourly sea level, quality-control it, extract extremes, and fit
 GEV (annual maxima) and GPD (peaks over threshold) distributions to estimate return levels.
