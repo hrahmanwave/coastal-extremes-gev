@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6b7a"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="300" rx="14" fill="#ffffff"/>
+  <text x="480" y="42" text-anchor="middle" font-size="21" font-weight="600" fill="#1b2a38">coastal-extremes-gev workflow</text>
+
+  <!-- boxes -->
+  <g font-size="15" text-anchor="middle">
+    <rect x="24" y="90" width="160" height="96" rx="10" fill="#e3f0fb" stroke="#2f6fa8" stroke-width="1.5"/>
+    <text x="104" y="122" font-weight="600" fill="#1b2a38">Tide gauges</text>
+    <text x="104" y="146" font-size="13" fill="#3d4c5a">UHSLC hourly</text>
+    <text x="104" y="166" font-size="13" fill="#3d4c5a">NOAA CO-OPS</text>
+
+    <rect x="212" y="90" width="160" height="96" rx="10" fill="#e3f0fb" stroke="#2f6fa8" stroke-width="1.5"/>
+    <text x="292" y="122" font-weight="600" fill="#1b2a38">Quality control</text>
+    <text x="292" y="146" font-size="13" fill="#3d4c5a">hourly grid, gaps</text>
+    <text x="292" y="166" font-size="13" fill="#3d4c5a">yearly completeness</text>
+
+    <rect x="400" y="90" width="160" height="96" rx="10" fill="#fff3df" stroke="#c07a12" stroke-width="1.5"/>
+    <text x="480" y="122" font-weight="600" fill="#1b2a38">Detrend</text>
+    <text x="480" y="146" font-size="13" fill="#3d4c5a">remove MSL trend</text>
+    <text x="480" y="166" font-size="13" fill="#3d4c5a">non-tidal residual</text>
+
+    <rect x="588" y="90" width="160" height="96" rx="10" fill="#fff3df" stroke="#c07a12" stroke-width="1.5"/>
+    <text x="668" y="122" font-weight="600" fill="#1b2a38">Extremes</text>
+    <text x="668" y="146" font-size="13" fill="#3d4c5a">annual maxima → GEV</text>
+    <text x="668" y="166" font-size="13" fill="#3d4c5a">POT → GPD</text>
+
+    <rect x="776" y="90" width="160" height="96" rx="10" fill="#fff3df" stroke="#c07a12" stroke-width="1.5"/>
+    <text x="856" y="122" font-weight="600" fill="#1b2a38">Return levels</text>
+    <text x="856" y="146" font-size="13" fill="#3d4c5a">10/50/100-year</text>
+    <text x="856" y="166" font-size="13" fill="#3d4c5a">with bootstrap CI</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#5b6b7a" stroke-width="2" marker-end="url(#arr)">
+    <line x1="186" y1="138" x2="208" y2="138"/>
+    <line x1="374" y1="138" x2="396" y2="138"/>
+    <line x1="562" y1="138" x2="584" y2="138"/>
+    <line x1="750" y1="138" x2="772" y2="138"/>
+  </g>
+
+  <!-- comparison bar -->
+  <rect x="212" y="218" width="536" height="44" rx="10" fill="#eef7ee" stroke="#3e8e41" stroke-width="1.5"/>
+  <text x="480" y="246" text-anchor="middle" font-size="15" fill="#1b2a38">Comparison: Bay of Bengal station vs. US Gulf Coast station</text>
+
+  <!-- legend -->
+  <g font-size="12" fill="#3d4c5a">
+    <rect x="24" y="226" width="14" height="14" rx="3" fill="#e3f0fb" stroke="#2f6fa8"/>
+    <text x="44" y="238">implemented</text>
+    <rect x="24" y="250" width="14" height="14" rx="3" fill="#fff3df" stroke="#c07a12"/>
+    <text x="44" y="262">planned</text>
+  </g>
+</svg>
