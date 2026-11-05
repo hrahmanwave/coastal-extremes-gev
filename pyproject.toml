@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cextremes"
+version = "0.0.1"
+description = "Extreme value analysis of coastal water levels from tide gauge records"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Md. Hasanur Rahman" }]
+dependencies = ["numpy", "pandas>=2.0", "requests", "scipy", "matplotlib"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cextremes"]
+
+[tool.ruff]
+line-length = 100

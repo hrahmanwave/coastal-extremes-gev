@@ -1,0 +1,12 @@
+# Tide gauge stations used in this project.
+# Verify IDs and record lengths on the source websites before running:
+#   UHSLC:  https://uhslc.soest.hawaii.edu/data/
+#   NOAA:   https://tidesandcurrents.noaa.gov/
+
+uhslc:
+  - id: null          # TODO: pick a Bay of Bengal station from the UHSLC station map
+    name: ""
+
+noaa_coops:
+  - id: "8771450"
+    name: "Galveston Pier 21, TX"
