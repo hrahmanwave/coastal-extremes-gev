@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "coastal-extremes-gev: Extreme value analysis of coastal water levels from tide gauge records"
+authors:
+  - family-names: Rahman
+    given-names: "Md. Hasanur"
+repository-code: "https://github.com/hrahmanwave/coastal-extremes-gev"
+license: MIT
+version: 0.0.1
+date-released: 2026-11-05
