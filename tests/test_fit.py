@@ -1,4 +1,4 @@
-import numpy as np
+﻿import numpy as np
 import pandas as pd
 import pytest
 from scipy import stats
@@ -48,7 +48,7 @@ def test_empirical_positions_sorted():
 
 def make_hourly(slope=0.004, years=(2000, 2019)):
     idx = pd.date_range(f"{years[0]}-01-01", f"{years[1]}-12-31 23:00", freq="h")
-    t = idx.year + (idx.dayofyear - 0.5) / 365.25
+    t = idx.year + (idx.day_of_year - 0.5) / 365.25
     tide = 0.5 * np.sin(2 * np.pi * np.arange(len(idx)) / 12.42)
     return pd.Series(slope * (t - years[0]) + tide, index=idx)
 
