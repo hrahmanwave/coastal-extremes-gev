@@ -1,0 +1,48 @@
+{
+  "station": "Galveston Pier 21, TX",
+  "ref_year": 2024,
+  "msl_trend_mm_per_year": 7.84,
+  "gev": {
+    "loc": 0.8939,
+    "scale": 0.1694,
+    "xi": 0.2408,
+    "n_years": 35
+  },
+  "return_levels_m": {
+    "2": {
+      "level": 0.959,
+      "lower": 0.902,
+      "upper": 1.022
+    },
+    "5": {
+      "level": 1.2,
+      "lower": 1.081,
+      "upper": 1.329
+    },
+    "10": {
+      "level": 1.4,
+      "lower": 1.181,
+      "upper": 1.67
+    },
+    "25": {
+      "level": 1.71,
+      "lower": 1.288,
+      "upper": 2.363
+    },
+    "50": {
+      "level": 1.991,
+      "lower": 1.354,
+      "upper": 3.154
+    },
+    "100": {
+      "level": 2.32,
+      "lower": 1.416,
+      "upper": 4.244
+    }
+  },
+  "largest_annual_maxima": {
+    "2008": 3.167,
+    "1998": 1.55,
+    "2003": 1.475
+  }
+}

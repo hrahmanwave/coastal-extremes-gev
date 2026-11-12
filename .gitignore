@@ -1,1 +1,10 @@
-
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+.idea/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+data/

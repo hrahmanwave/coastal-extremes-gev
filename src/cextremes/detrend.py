@@ -1,4 +1,4 @@
-"""Remove the long-term mean sea level trend before extreme value analysis.
+﻿"""Remove the long-term mean sea level trend before extreme value analysis.
 
 Sea level rise shifts every year's water levels upward, so annual maxima from the 1990s
 and the 2020s are not samples from the same distribution. A stationary GEV fit needs that
@@ -34,6 +34,6 @@ def detrend(s: pd.Series, ref_year: float | None = None,
     slope, _ = msl_trend(s, min_completeness)
     if ref_year is None:
         ref_year = float(s.index.year.max())
-    t = s.index.year + (s.index.dayofyear - 0.5) / 365.25
+    t = s.index.year + (s.index.day_of_year - 0.5) / 365.25
     adjusted = s - slope * (t - ref_year)
     return adjusted.rename(s.name), slope
