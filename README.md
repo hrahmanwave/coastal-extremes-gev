@@ -1,5 +1,7 @@
 # coastal-extremes-gev
 
+[![tests](https://github.com/hrahmanwave/coastal-extremes-gev/actions/workflows/tests.yml/badge.svg)](https://github.com/hrahmanwave/coastal-extremes-gev/actions/workflows/tests.yml)
+
 <p align="center">
   <img src="figures/workflow.svg" alt="Workflow" width="900">
 </p>
@@ -44,14 +46,29 @@ python scripts/plot_annual_maxima.py --station 8761724 --name "Grand Isle, LA" -
 Saves `figures/<station>_annual_maxima.png`: annual maximum water level with a linear trend,
 and yearly data completeness (years with less than 80% data are excluded).
 
+## Return levels
+
+```bash
+python scripts/return_levels.py --station 8771450 --name "Galveston Pier 21, TX"
+```
+
+Removes the linear mean sea level trend (relative to the last year), fits a GEV distribution
+to annual maxima from complete years, and estimates 2- to 100-year return levels with 90%
+bootstrap confidence intervals.
+
+![Galveston return levels](figures/8771450_return_levels.png)
+
+At Galveston Pier 21 (1990-2024, 35 complete years), mean sea level rose about 7.8 mm/yr.
+The estimated 100-year water level is 2.32 m above MSL, with a wide 90% interval
+(1.42-4.24 m): 35 years of data constrain a 100-year event only loosely.
 ## Roadmap
 
 - [x] UHSLC research-quality hourly download
 - [x] NOAA CO-OPS hourly download (year-by-year, cached)
 - [x] Quality control: regular hourly grid, yearly completeness, annual maxima
 - [x] Workflow diagram and annual maxima plotting script
-- [ ] Remove linear mean sea level trend, compute non-tidal residual
-- [ ] GEV fit to annual maxima with bootstrap confidence intervals
+- [x] Remove linear mean sea level trend, compute non-tidal residual
+- [x] GEV fit to annual maxima with bootstrap confidence intervals
 - [ ] Peaks over threshold + GPD, threshold selection
 - [ ] Return level plots, Bay of Bengal vs. Gulf Coast comparison
 - [ ] Non-stationary GEV (time-varying location)
