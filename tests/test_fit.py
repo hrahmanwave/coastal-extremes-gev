@@ -63,3 +63,12 @@ def test_trend_estimated_and_removed():
     # later years unchanged near the reference year, earlier years raised
     assert adjusted["2019"].mean() == pytest.approx(s["2019"].mean(), abs=0.003)
     assert adjusted["2000"].mean() > s["2000"].mean() + 0.06
+
+
+def test_return_period_inverts_return_level():
+    from cextremes.fit import return_period
+
+    fit = fit_gev(sample(60))
+    for period in (5, 50, 100):
+        level = fit.return_level(period)
+        assert return_period(fit, level) == pytest.approx(period, rel=1e-6)

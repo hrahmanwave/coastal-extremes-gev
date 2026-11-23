@@ -86,3 +86,15 @@ def empirical_return_periods(annual_max: pd.Series | np.ndarray) -> pd.DataFrame
     rank = np.arange(1, n + 1)
     exceed_prob = (rank - 0.44) / (n + 0.12)
     return pd.DataFrame({"level": x, "return_period": 1 / exceed_prob})
+
+
+def return_period(fit: GEVFit, level: float | np.ndarray) -> np.ndarray:
+    """Average number of years between events at least as high as ``level``.
+
+    The inverse of :meth:`GEVFit.return_level`: useful for asking how rare an observed
+    event was, e.g. the water level during a particular hurricane.
+    """
+    cdf = stats.genextreme.cdf(np.asarray(level, dtype=float), -fit.xi,
+                               loc=fit.loc, scale=fit.scale)
+    with np.errstate(divide="ignore"):
+        return 1.0 / (1.0 - cdf)
